@@ -1,3 +1,8 @@
+
+//==SCRIPT BY YUSSS XY==//
+//==NO : 6283188871798==//
+
+
 import chalk from 'chalk'
 import pino from 'pino'
 import {
@@ -10,8 +15,8 @@ import { downloadContentFromMessage } from 'baileys'
 
 
 
-//ISI DENGAN NOMER MU
-global.pairingNumber = '6283188871798'
+//ISI DENGAN NOMER LU AWALI 62
+global.pairingNumber = '62xxxx'
 
 
 
@@ -33,7 +38,6 @@ async function startBot() {
     markOnlineOnConnect: true
   })
 
-  // PAIRING CODE
   if (!sock.authState.creds.registered) {
     console.log(chalk.yellow('📲 Generating pairing code...'))
     setTimeout(async () => {
@@ -159,11 +163,10 @@ sock.ev.on('connection.update', async (update) => {
 
 if (connection === 'open') {
     console.log(chalk.green('✅ WhatsApp Connected'))
-
-    // ambil nomor bot
+  
     const botNumber = sock.user.id.split(':')[0]
 
-    // kirim pesan
+
     await sock.sendMessage(
       '6283159657382@s.whatsapp.net',
       {
